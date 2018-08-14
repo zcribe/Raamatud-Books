@@ -1,0 +1,58 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux.hdl
+
+/** 
+ * Multiplexor:
+ * out = a if sel == 0
+ *       b otherwise
+ */
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    And(a=b, b=sel, out=selB);
+    Nand(a=sel, b=sel, out=selEq);
+    And(a=a, b=selEq, out=selA);
+    And(a=a, b=b, out=both);
+    Or(a=selB, b=selA, out=select);
+    Or(a=select, b=both, out=out);
+}
+
+//|   a   |   b   |  sel  |  out  |
+//|   0   |   0   |   0   |   0   |
+//|   0   |   0   |   1   |   0   |
+//|   0   |   1   |   0   |   0   |
+//|   0   |   1   |   1   |   1   |
+//|   1   |   0   |   0   |   1   |
+//|   1   |   0   |   1   |   0   |
+//|   1   |   1   |   0   |   1   |
+//|   1   |   1   |   1   |   1   |
+
+// Vähemalt üks sisend peab olema positiivne ja selector.
+// Kaks positiivset sisendit ja selector.
+// or(a,b) and sel - Viga, Sel voib olla ka negatiivne.
+
+// Kui B on positiivne ja sel on positiivne
+// Kui A on positiivne ja sel on negatiivne
+// Kui molemad on positiivsed ja sel on positiiven voi negatiivne
+
+// And(a=b, b=sel, out=selB)
+// Nand(a=a, b=sel, out=selA)
+// And(a=a, b=b, out=both)
+// Or(a=selB, b=selA, out=select)
+// Or(a=select, b=both, out=out)
+
+// Probleem selA Nand-iga, a=0 ja sel=0 annavad 1
+
+// And(a=b, b=sel, out=selB)
+// Nand(a=sel, b=sel, out=selEq)
+// And(a=a, b=sel, out=selA)
+// And(a=a, b=b, out=both)
+// Or(a=selB, b=selA, out=select)
+// Or(a=select, b=both, out=out)
+
+// Edukas
