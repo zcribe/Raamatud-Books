@@ -1,0 +1,45 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Adder16.hdl
+
+/**
+ * Adds two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP Add16 {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    HalfAdder(a=a[0], b=b[0], sum=out[0], carry=aCar);
+    FullAdder(a=a[1], b=b[1], c=aCar, sum=out[1], carry=bCar);
+    FullAdder(a=a[2], b=b[2], c=bCar, sum=out[2], carry=cCar);
+    FullAdder(a=a[3], b=b[3], c=cCar, sum=out[3], carry=dCar);
+    FullAdder(a=a[4], b=b[4], c=dCar, sum=out[4], carry=eCar);
+    FullAdder(a=a[5], b=b[5], c=eCar, sum=out[5], carry=fCar);
+    FullAdder(a=a[6], b=b[6], c=fCar, sum=out[6], carry=gCar);
+    FullAdder(a=a[7], b=b[7], c=gCar, sum=out[7], carry=hCar);
+    FullAdder(a=a[8], b=b[8], c=hCar, sum=out[8], carry=iCar);
+    FullAdder(a=a[9], b=b[9], c=iCar, sum=out[9], carry=jCar);
+    FullAdder(a=a[10], b=b[10], c=jCar, sum=out[10], carry=kCar);
+    FullAdder(a=a[11], b=b[11], c=kCar, sum=out[11], carry=lCar);
+    FullAdder(a=a[12], b=b[12], c=lCar, sum=out[12], carry=mCar);
+    FullAdder(a=a[13], b=b[13], c=mCar, sum=out[13], carry=nCar);
+    FullAdder(a=a[14], b=b[14], c=nCar, sum=out[14], carry=oCar);
+    FullAdder(a=a[15], b=b[15], c=oCar, sum=out[15], carry=pCar);
+
+}
+
+// |        a         |        b         |       out        |
+// | 0000000000000000 | 0000000000000000 | 0000000000000000 |
+// | 0000000000000000 | 1111111111111111 | 1111111111111111 |
+// | 1111111111111111 | 1111111111111111 | 1111111111111110 |
+// | 1010101010101010 | 0101010101010101 | 1111111111111111 |
+// | 0011110011000011 | 0000111111110000 | 0100110010110011 |
+// | 0001001000110100 | 1001100001110110 | 1010101010101010 |
+
+// Esimesel ei ole ulekannet ja viimase ulekanne meid ei huvita.
+
+// Viga. Viimase tehte tegemisel meid huvitab ikkagi eelmine ulekanne ilmselgelt. Lihtsalt viimase ulekandega me ei tee midagi.
