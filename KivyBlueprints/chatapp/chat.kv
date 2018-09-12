@@ -1,0 +1,105 @@
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import DampedScrollEffect kivy.effects
+#:import C kivy.utils.get_color_from_hex
+
+<TextInput>:
+    multiline: False
+    padding: [10, 0.5 * (self.height - self.line_height)]
+
+
+<Label>:
+    font_size: 25
+
+<Button>:
+    font_size: 30
+    height: 90
+    size_hint: (1, None)
+    background_normal: 'button_normal.png'
+    background_down: 'button_down.png'
+    background_color: 1, .3, .4, .85
+    border: (2, 2, 2, 2)
+
+<BoxLayout>:
+    padding: 10
+    spacing: 10
+
+<GridLayout>:
+    rows: 2
+    cols: 2
+    spacing: 10
+    row_default_height: 90
+    row_force_default: True
+
+<ScrollView>:
+    on_effect_cls: DampedScrollEffect
+    canvas.before:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ChatLabel@Label>:
+    color: C('#101010')
+    text_size: (self.width, None)
+    halign: 'left'
+    valign: 'top'
+    size_hint: (1, None)
+    height: self.texture_size[1]
+    markup: True
+
+ScreenManager:
+    transition: RiseInTransition()
+
+    Screen:
+        name: 'login'
+
+        BoxLayout:
+            orientation: 'vertical'
+            GridLayout:
+                Label:
+                    text: 'Server:'
+                    bold: True
+
+                TextInput:
+                    id: server
+                    text: '127.0.0.1'
+
+                Label:
+                    text: 'Nickname:'
+                    bold: True
+
+                TextInput:
+                    id: nickname
+                    text: 'Kivy'
+
+            Button:
+                text: 'Connect'
+                on_press: root.current = 'chatroom'
+
+    Screen:
+        name: 'chatroom'
+        BoxLayout:
+            orientation: 'vertical'
+
+            Button:
+                text: 'Disconnect'
+                on_press: root.current = 'login'
+
+            ScrollView:
+                ChatLabel:
+                    id: chat_logs
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Proin euismod velit vel velit dapibus, eget imperdiet lectus ultricies.\n Nam vitae neque id purus lobortis pulvinar.\n Phasellus a nunc eleifend, ornare libero vitae, tempus est. Nam vitae eros tristique, porttitor tellus et, porttitor nisi. Vivamus sed leo sed eros porttitor scelerisque sed eu ipsum.\n Donec a blandit orci. Maecenas quis imperdiet nisl. Nunc sit amet erat neque.\n Curabitur at dolor sapien. Morbi varius in libero sed viverra. In quis iaculis dolor.\n Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id gravida nibh, nec iaculis arcu.\n Suspendisse dignissim turpis enim, in commodo arcu faucibus vitae. Proin vehicula eu eros vel euismod.Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Proin euismod velit vel velit dapibus, eget imperdiet lectus ultricies.\n Nam vitae neque id purus lobortis pulvinar.\n Phasellus a nunc eleifend, ornare libero vitae, tempus est. Nam vitae eros tristique, porttitor tellus et, porttitor nisi. Vivamus sed leo sed eros porttitor scelerisque sed eu ipsum.\n Donec a blandit orci. Maecenas quis imperdiet nisl. Nunc sit amet erat neque.\n Curabitur at dolor sapien. Morbi varius in libero sed viverra. In quis iaculis dolor.\n Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id gravida nibh, nec iaculis arcu.\n Suspendisse dignissim turpis enim, in commodo arcu faucibus vitae. Proin vehicula eu eros vel euismod.  '
+
+            BoxLayout:
+                height: 90
+                orientation: 'horizontal'
+                padding: 0
+                size_hint: (1, None)
+
+                TextInput:
+                    id: message
+
+                Button:
+                    text: 'Send'
+                    size_hint: (0.3, 1)
