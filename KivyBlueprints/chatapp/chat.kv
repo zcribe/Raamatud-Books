@@ -75,7 +75,7 @@ ScreenManager:
 
             Button:
                 text: 'Connect'
-                on_press: root.current = 'chatroom'
+                on_press: app.connect()
 
     Screen:
         name: 'chatroom'
@@ -84,12 +84,12 @@ ScreenManager:
 
             Button:
                 text: 'Disconnect'
-                on_press: root.current = 'login'
+                on_press: app.disconnect()
 
             ScrollView:
                 ChatLabel:
                     id: chat_logs
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Proin euismod velit vel velit dapibus, eget imperdiet lectus ultricies.\n Nam vitae neque id purus lobortis pulvinar.\n Phasellus a nunc eleifend, ornare libero vitae, tempus est. Nam vitae eros tristique, porttitor tellus et, porttitor nisi. Vivamus sed leo sed eros porttitor scelerisque sed eu ipsum.\n Donec a blandit orci. Maecenas quis imperdiet nisl. Nunc sit amet erat neque.\n Curabitur at dolor sapien. Morbi varius in libero sed viverra. In quis iaculis dolor.\n Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id gravida nibh, nec iaculis arcu.\n Suspendisse dignissim turpis enim, in commodo arcu faucibus vitae. Proin vehicula eu eros vel euismod.Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Proin euismod velit vel velit dapibus, eget imperdiet lectus ultricies.\n Nam vitae neque id purus lobortis pulvinar.\n Phasellus a nunc eleifend, ornare libero vitae, tempus est. Nam vitae eros tristique, porttitor tellus et, porttitor nisi. Vivamus sed leo sed eros porttitor scelerisque sed eu ipsum.\n Donec a blandit orci. Maecenas quis imperdiet nisl. Nunc sit amet erat neque.\n Curabitur at dolor sapien. Morbi varius in libero sed viverra. In quis iaculis dolor.\n Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id gravida nibh, nec iaculis arcu.\n Suspendisse dignissim turpis enim, in commodo arcu faucibus vitae. Proin vehicula eu eros vel euismod.  '
+                    text: ''
 
             BoxLayout:
                 height: 90
@@ -99,7 +99,9 @@ ScreenManager:
 
                 TextInput:
                     id: message
+                    on_text_validate: app.send_msg()
 
                 Button:
                     text: 'Send'
                     size_hint: (0.3, 1)
+                    on_press: app.send_msg()
