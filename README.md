@@ -1,5 +1,6 @@
 # Raamatud-Books
 Book exercise solutions:
+###### ["Head First Java" -   Kathy Sierra, Bert Bates](https://github.com/zcribe/Raamatud-Books/tree/master/headFirstJava)
 ###### ["Computer Networking: A Top-Down Approach" -  James F. Kurose,Keith W. Ross](https://github.com/zcribe/Raamatud-Books/tree/master/kuroseRoss)
 ###### ["Kivy Blueprints" - Mark Vasilkov](https://github.com/zcribe/Raamatud-Books/tree/master/KivyBlueprints)
 ###### ["Structure and Interpretation of Computer Programs" -  Harold Abelson,Gerald Jay Sussman, Julie Sussman](https://github.com/zcribe/Raamatud-Books/tree/master/SICP)
