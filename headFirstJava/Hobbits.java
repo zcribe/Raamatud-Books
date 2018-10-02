@@ -1,6 +1,12 @@
 public class Hobbits {
     String name;
 
+    public static String toCamelCase(String string) {
+        StringBuffer sb = new StringBuffer(string);
+        sb.replace(0, 1, string.substring(0, 1).toUpperCase());
+        return sb.toString();
+    }
+
     public static void main(String[] args){
         Hobbits[] h = new Hobbits[3];
         int z = -1;
@@ -15,8 +21,11 @@ public class Hobbits {
             if (z == 1){
                 h[z].name = "sam";
             }
-            System.out.print(h[z].name + " is a ");
+            System.out.print(toCamelCase(h[z].name) + " is a ");
             System.out.print("good Hobbit name. \n");
         }
     }
+
 }
+
+
