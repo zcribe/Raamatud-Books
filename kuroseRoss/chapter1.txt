@@ -47,3 +47,30 @@ Wifi roater broadcasts a field and transmits internet packets to host.
 Bluetooth seems more reliable overall than Wifi.
 
 R11
+
+R12
+Circuit switched network has a dedicated line so there is no bandwidth overflow or exhaustion.
+
+R13
+A 2
+B At max load link operates within limitations. With three concurrent users link may become overwhelmed when throughput is exceeded.
+C 1/5 20%
+D 1/125 
+
+R14
+They can avoid paying for 1st tier ISP fees if they can form the connection on their level. They have more leverage in pricing. IXP takes a fee for
+every connection formed.
+
+R15
+Content providers can nowadays bypass traditional ISP networks partly by creating their internal connection network.
+
+R16
+Nodal processing - Constant
+Queueing - Variable
+Transmission - Variable
+Propagation - Variable
+
+R17
+--
+
+R18
