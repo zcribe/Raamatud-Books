@@ -111,11 +111,39 @@ Payment processing.
  
  P1 
  A True
- B False
+ B True
  C False
  D False
  E False
  
- P2
+ P2 Hiljem!!!
+ 
+ P3
+ DNS address resolve. Ethernet, TCP, IP, HTTP GET request to IP received. 
+ DNS gets a request with string. DNS resolves the string and responds with IP. Host takes the IP creates HTTP GET request for the index page. Server gets
+ the request and responds with 200 status code and the files.
+ 
+ P4
+ A http://gaia.cs.umaass.edu/cs453/index.html
+ B Http 1.1
+ C Persistent 300s
+ D Mozilla Firefox 5.0
+ 
+ P5
+ A Yes(Code 200), Tue 07 Mar 2008 12:39:45 GMT
+ B Sat 10 Dec 2005 18:27:46
+ C 3874 bytes
+ D ?, Yes but 100s
+ 
+ P6 Hiljem!!!
+ 
+ P7
+ A 
+ B
+ C 
+ 
+ P8
+ 
+ 
  
  

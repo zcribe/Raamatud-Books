@@ -1,0 +1,49 @@
+Homework problems and questions:
+
+1.1
+
+R1
+There is no difference. PC, Phone, TV, Server, Laptop
+. Yes, because it is at the edge of a network.
+
+R2
+Connection establishment and confirmation (Hello, Hello) Content (Message/Conversation)(Good Bye, Goodbye) termination.
+
+R3
+In order to communicate we need to reduce the bandwidth and content of information transfer to the important parts. To do this reliably we need to agree
+on the bandwidth and the important parts. Agreement in this area makes communication fast and efficient.
+
+R4
+Ethernet - cable is connected ISP Home/Office
+Wifi - radiowave to wifi router then ethernet to ISP Home
+Mobile internet(4G/LTE) - radiowave connection to mobile tower and to ISP Home/Office
+Coax - TV cable to ISP - Home
+Fiber - Home/Office
+DSL - Home
+Sattelite - Home/Rural
+Dial Up - Ancient
+
+R5
+Coax part is dedicated and fiber part is packet switched. Yes. Because you can overload fiber multiplexer if you connect too many coax clients.
+
+R6
+Sattelite / Mobile / Dial Up
+
+R7
+DSL is a dedicated internet service. Dial up is adjusted to operate on existing phone line bandwidth and thus limited.
+
+R8
+?
+
+R9
+Dial up - Dedicated 56 Kbps
+HFC - Shared 42.8 Mbps/ 30.7 Mbps
+DSL - Dedicated - [12 Mbps/1.8 Mbps] / [55 Mbps/15 Mbps]
+FTTH 20 Mbps
+
+R10
+Wifi, Bluetooth
+Wifi roater broadcasts a field and transmits internet packets to host. 
+Bluetooth seems more reliable overall than Wifi.
+
+R11
