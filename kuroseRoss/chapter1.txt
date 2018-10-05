@@ -74,3 +74,47 @@ R17
 --
 
 R18
+
+R23
+Application layer - Applications to users
+Transport layer - Byte stream provider TCP/UDP
+Internet Layer - Network addressing and routing IP
+Link Layer - Hardware software Ethernet/Wifi
+Physical layer - Hardware
+
+R24
+Wrapping and unwrapping higher layers with lower layer protocols. It allows to seperate each layers concerns.
+
+R25
+Router procceses the internet layer
+Link layer switch works with link layer
+Host usually works with Application and Transport layer
+
+R26
+Sniff unencrypted packets.
+
+R27
+Distribute remote access tool by different means and let them lie dormant. Once you have a significant number of them then you have a botnet.
+With this you can create large number of requests for a server and overwhelm it to the point that normal users can not access it or to the point the
+server software crashes.
+
+R28
+She can change the contents of the packets or transmit fake packets.
+
+P1
+Hello ->
+<- Hello
+-> Card nr / Password
+<-Valid/Invalid nr /Password
+-> Balance request
+<- Balance response
+-> Withdrawal request
+<- Withdrawal ok
+-> Withdrawal confirmed
+<- Balance response
+
+Protocol assumes all data exchanged is error corrected. It assumes no data corruption. Doesn't deal with faulty entry.
+
+P2
+
+
