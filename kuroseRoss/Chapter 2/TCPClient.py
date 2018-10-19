@@ -1,6 +1,6 @@
 from socket import *
 
-server_name = "servername"
+server_name = "127.0.0.1"
 server_port = 12000
 
 # Client socket creation. AF_INET = ipv4, SOCK_STREAM = TCP socket
