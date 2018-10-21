@@ -2,19 +2,25 @@
 
 import os.path as path
 from socket import socket, AF_INET, SOCK_STREAM
+import argparse
 
 
 class Main:
     def __init__(self):
-        self.port = 2080
+        argument_parser = argparse.ArgumentParser()
+        argument_parser.add_argument("--port", "-p", default=2000, type=int,
+                                     help="Socket port to use (default: 2000)")
+        argument_parser.add_argument("-unaccepted_connections", "-uc", default=1, type=int,
+                                     help="How many unaccepted connections can queue")
+        argument_parser.add_argument("-buffer_size", "-bs", default=1024, type=int,
+                                     help="How many bytes do you want to buffer? (default: 1024)")
+        self.arguments = argument_parser.parse_args()
         self.listening_socket = None
-        self.unaccepted_connections = 1
-        self.buffer_size = 1024
 
     def run(self):
         self.listening_socket = socket(AF_INET, SOCK_STREAM)
-        self.listening_socket.bind(('', self.port))
-        self.listening_socket.listen(self.unaccepted_connections)
+        self.listening_socket.bind(('', self.arguments.port))
+        self.listening_socket.listen(self.arguments.unaccepted_connections)
         print("Listening for connections.")
         while True:
             connection_socket = self.create_connection()
@@ -22,10 +28,10 @@ class Main:
                 self.handle_request(connection)
 
     def set_port(self, port: int):
-        self.port = port
+        self.arguments.port = port
 
     def set_unaccepted_connections(self, connections: int):
-        self.unaccepted_connections = connections
+        self.arguments.unaccepted_connections = connections
 
     # create a connection socket when contacted by a client
     def create_connection(self):
@@ -38,7 +44,7 @@ class Main:
     # get the requested file from server file system
     # send the request over TCP connection to the requesting browser. If the file not in server respond with 404
     def handle_request(self, connection):
-        request = connection.recv(self.buffer_size).decode("ascii")
+        request = connection.recv(self.arguments.buffer_size).decode("ascii")
         response = self.generate_response(request)
         connection.send(response.encode("ascii"))
 
