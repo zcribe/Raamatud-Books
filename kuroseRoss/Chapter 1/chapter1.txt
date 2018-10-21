@@ -1,0 +1,120 @@
+Homework problems and questions:
+
+1.1
+
+R1
+There is no difference. PC, Phone, TV, Server, Laptop
+. Yes, because it is at the edge of a network.
+
+R2
+Connection establishment and confirmation (Hello, Hello) Content (Message/Conversation)(Good Bye, Goodbye) termination.
+
+R3
+In order to communicate we need to reduce the bandwidth and content of information transfer to the important parts. To do this reliably we need to agree
+on the bandwidth and the important parts. Agreement in this area makes communication fast and efficient.
+
+R4
+Ethernet - cable is connected ISP Home/Office
+Wifi - radiowave to wifi router then ethernet to ISP Home
+Mobile internet(4G/LTE) - radiowave connection to mobile tower and to ISP Home/Office
+Coax - TV cable to ISP - Home
+Fiber - Home/Office
+DSL - Home
+Sattelite - Home/Rural
+Dial Up - Ancient
+
+R5
+Coax part is dedicated and fiber part is packet switched. Yes. Because you can overload fiber multiplexer if you connect too many coax clients.
+
+R6
+Sattelite / Mobile / Dial Up
+
+R7
+DSL is a dedicated internet service. Dial up is adjusted to operate on existing phone line bandwidth and thus limited.
+
+R8
+?
+
+R9
+Dial up - Dedicated 56 Kbps
+HFC - Shared 42.8 Mbps/ 30.7 Mbps
+DSL - Dedicated - [12 Mbps/1.8 Mbps] / [55 Mbps/15 Mbps]
+FTTH 20 Mbps
+
+R10
+Wifi, Bluetooth
+Wifi roater broadcasts a field and transmits internet packets to host. 
+Bluetooth seems more reliable overall than Wifi.
+
+R11
+
+R12
+Circuit switched network has a dedicated line so there is no bandwidth overflow or exhaustion.
+
+R13
+A 2
+B At max load link operates within limitations. With three concurrent users link may become overwhelmed when throughput is exceeded.
+C 1/5 20%
+D 1/125 
+
+R14
+They can avoid paying for 1st tier ISP fees if they can form the connection on their level. They have more leverage in pricing. IXP takes a fee for
+every connection formed.
+
+R15
+Content providers can nowadays bypass traditional ISP networks partly by creating their internal connection network.
+
+R16
+Nodal processing - Constant
+Queueing - Variable
+Transmission - Variable
+Propagation - Variable
+
+R17
+--
+
+R18
+
+R23
+Application layer - Applications to users
+Transport layer - Byte stream provider TCP/UDP
+Internet Layer - Network addressing and routing IP
+Link Layer - Hardware software Ethernet/Wifi
+Physical layer - Hardware
+
+R24
+Wrapping and unwrapping higher layers with lower layer protocols. It allows to seperate each layers concerns.
+
+R25
+Router procceses the internet layer
+Link layer switch works with link layer
+Host usually works with Application and Transport layer
+
+R26
+Sniff unencrypted packets.
+
+R27
+Distribute remote access tool by different means and let them lie dormant. Once you have a significant number of them then you have a botnet.
+With this you can create large number of requests for a server and overwhelm it to the point that normal users can not access it or to the point the
+server software crashes.
+
+R28
+She can change the contents of the packets or transmit fake packets.
+
+P1
+Hello ->
+<- Hello
+-> Card nr / Password
+<-Valid/Invalid nr /Password
+-> Balance request
+<- Balance response
+-> Withdrawal request
+<- Withdrawal ok
+-> Withdrawal confirmed
+<- Balance response
+
+Protocol assumes all data exchanged is error corrected. It assumes no data corruption. Doesn't deal with faulty entry.
+
+P2
+
+
