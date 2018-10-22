@@ -49,7 +49,7 @@ class Main:
         self.socket.send(("DATA" + '\r\n').encode())
         self.socket.send(("Subject: Test!" + '\r\n').encode())
         self.socket.send("TEST".encode())
-        self.socket.send(("\r\n.\r\n").encode())
+        self.socket.send("\r\n.\r\n".encode())
         print(self.socket.recv(self.buffer))
         self.socket.send(("QUIT" + '\r\n').encode())
 
