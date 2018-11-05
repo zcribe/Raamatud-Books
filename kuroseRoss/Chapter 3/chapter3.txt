@@ -1,12 +1,14 @@
 Homework problems and questions:
 
 P1
+
 a: Any port selected
 b: Any port selected
 c: Yes
 d: Yes
 
 P2
+
 Pilt on kusagil ees
 
 P3
@@ -57,4 +59,23 @@ Received:
 1111 false positive
 
 P6
+
+Pilt on kusagil ees
+
+P7
+
+Pilt on kusagil ees
+
+P8
+
+P13
+
+With built in UDP no. You would need to modify the protocol to keep track of the received packets.
+
+P14
+
+It would work over channel with bit errors since due to uncorruptable negative acknowledgments. If there is an
+error you can always request a retransmit. With a lossy network the negative acknowledgment might get lost or the
+packet might itself never arrive thus there is nothing to negatively acknowledge.
+
 
