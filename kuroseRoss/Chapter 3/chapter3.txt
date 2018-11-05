@@ -29,3 +29,32 @@ the same sum of 1111 1111. For example when 1 bit error occurs in 2 different wo
 
 P4
 
+01011101 11110010 +
+00110010 00001101 +
+-----------------
+10001111 11111111
+
+Segment is considered incorrectly received since it doesn't result in 16bit of 1s.
+Since it is a UDP segment the receiver still passes it. UDP doesn't do error recovery by itself.
+
+P5
+
+No. Errors might have occurred in multiple parts and that might correspond to each-other. This way checksum
+calculation would still result in false-positive.
+
+Sent:
+0001 1st
+1010 2nd
+0100 cs
+-------
+1111
+
+Received:
+0000 1st faulty
+1011 2nd faulty
+0100 cs
+--------
+1111 false positive
+
+P6
+
