@@ -1,0 +1,31 @@
+Homework problems and questions:
+
+P1
+a: Any port selected
+b: Any port selected
+c: Yes
+d: Yes
+
+P2
+Pilt on kusagil ees
+
+P3
+
++  0101 0011
++  0110 0110
++  0111 0100
+---------------------------- (8bit limit wrap around)
+ 1 0010 1101
+   0010 1110
+1s complement -------------- (+ 1111 1111)
+   1101 0001
+
+You use 1s compliment in order to get the value necessary for 3 words and checksum to equal 1111 1111.
+So if you later add together 3 words and a checksum and the result is not 1111 1111 then you know you have
+an error.
+
+This scheme detects 1 bit errors but doesn't necessarily detect 2 bit ones. 2 bit error can still result in
+the same sum of 1111 1111. For example when 1 bit error occurs in 2 different words but in the same position.
+
+P4
+
